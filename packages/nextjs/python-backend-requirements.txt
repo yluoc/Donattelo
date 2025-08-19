@@ -1,0 +1,17 @@
+# Python Flask Backend Requirements
+Flask==2.3.3
+Flask-CORS==4.0.0
+Pillow==10.0.1
+requests==2.31.0
+
+# Optional: Add your AI/ML libraries here
+# tensorflow==2.13.0
+# torch==2.0.1
+# opencv-python==4.8.1.78
+
+# For blockchain interactions (optional)
+# web3==6.11.1
+# eth-account==0.9.0
+
+# For Walrus storage (replace with actual Walrus SDK when available)
+# walrus-sdk==1.0.0
