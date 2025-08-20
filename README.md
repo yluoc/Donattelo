@@ -31,7 +31,6 @@ donattelo-nextjs/
 │       ├── lib/                # Core libraries & utilities
 │       │   ├── api/            # API clients & services
 │       │   ├── blockchain/     # Blockchain utilities
-│       │   ├── config/         # Configuration
 │       │   └── utils/          # General utilities
 │       │
 │       ├── services/           # Business logic services
@@ -41,8 +40,7 @@ donattelo-nextjs/
 │       │
 │       ├── types/              # TypeScript type definitions
 │       │   ├── api/            # API types
-│       │   ├── blockchain/     # Blockchain types
-│       │   └── common/         # Common types
+│       │   └── abitype/        # Contract ABI types
 │       │
 │       └── contracts/          # Contract ABIs & addresses
 ```
@@ -53,8 +51,6 @@ donattelo-nextjs/
 - Node.js >= 20.18.3
 - Yarn 3.2.3+
 - Foundry (for smart contract development)
-- Python 3.8+ (for Walrus integration)
-- Python dependencies (see `packages/nextjs/python-backend-requirements.txt`)
 
 ### Development Setup
 
@@ -63,29 +59,22 @@ donattelo-nextjs/
    yarn install
    ```
 
-2. **Install Python dependencies:**
-   ```bash
-   cd packages/nextjs
-   pip install -r python-backend-requirements.txt
-   cd ../..
-   ```
-
-3. **Start local blockchain:**
+2. **Start local blockchain:**
    ```bash
    yarn chain
    ```
 
-4. **Deploy contracts:**
+3. **Deploy contracts:**
    ```bash
    yarn deploy
    ```
 
-5. **Start frontend:**
+4. **Start frontend:**
    ```bash
    yarn start
    ```
 
-6. **Open in browser:**
+5. **Open in browser:**
    - Frontend: http://localhost:3000
    - Debug: http://localhost:3000/debug
 
@@ -126,15 +115,14 @@ yarn next:test
 - **Blockchain Explorer**: View transactions and addresses
 - **Contract Debugging**: Interactive contract testing interface
 - **Multi-chain Support**: Deploy to various Ethereum networks
-- **Walrus Integration**: Decentralized storage using Python local SDK
-- **Python Backend**: Local Flask server for AI and storage services
+- **Walrus Integration**: Decentralized storage using HTTP API calls
+- **External AI Services**: Integration with Gemini AI and other external APIs
 
 ## Configuration
 
 - **Frontend**: `packages/nextjs/scaffold.config.ts`
 - **Smart Contracts**: `packages/foundry/foundry.toml`
 - **Environment**: Copy `.env.example` to `.env`
-- **Python Backend**: Configure in `packages/nextjs/python-backend-requirements.txt`
 
 ## Deployment
 
