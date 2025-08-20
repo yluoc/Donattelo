@@ -176,7 +176,7 @@ export const NFTMinter = ({
     return (
       <div className="bg-gradient-to-r from-purple-50 to-blue-50 dark:from-purple-900/20 dark:to-blue-900/20 p-6 rounded-xl border border-purple-200 dark:border-purple-800">
         <div className="text-center space-y-4">
-          <div className="text-lg font-semibold text-purple-800 dark:text-purple-300">🎨 Ready to Mint Your NFT!</div>
+          <div className="text-lg font-semibold text-purple-800 dark:text-purple-300">Ready to Mint Your NFT!</div>
           <p className="text-sm text-gray-600 dark:text-gray-400">
             Connect your wallet to mint this artwork as an NFT on Base chain
           </p>
@@ -192,7 +192,7 @@ export const NFTMinter = ({
     <div className="bg-gradient-to-r from-purple-50 to-blue-50 dark:from-purple-900/20 dark:to-blue-900/20 p-6 rounded-xl border border-purple-200 dark:border-purple-800">
       <div className="space-y-4">
         <div className="text-lg font-semibold text-purple-800 dark:text-purple-300 flex items-center gap-2">
-          🎨 Mint as NFT
+          Mint as NFT
           <span className="text-xs bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-2 py-1 rounded-full">
             Base Chain
           </span>
@@ -223,11 +223,11 @@ export const NFTMinter = ({
             className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {!chain || chain.id !== base.id
-              ? "🔄 Switch to Base Network"
+              ? "Switch to Base Network"
               : transactionStatus === "pending" || isPending
-                ? "⏳ Preparing Transaction..."
+                ? "Preparing Transaction..."
                 : isConfirming
-                  ? "⏳ Confirming Transaction..."
+                                      ? "Confirming Transaction..."
                   : "� Mint NFT"}
           </button>
 
@@ -237,7 +237,7 @@ export const NFTMinter = ({
               onClick={resetTransactionState}
               className="w-full bg-gradient-to-r from-gray-500 to-gray-600 hover:from-gray-600 hover:to-gray-700 text-white font-medium py-2 px-4 rounded-lg transition-all duration-200 text-sm"
             >
-              🔄 Try Again
+              Try Again
             </button>
           )}
         </div>
@@ -246,7 +246,7 @@ export const NFTMinter = ({
           <div className="mt-4 p-3 bg-red-50 dark:bg-red-900/20 rounded-lg border border-red-200 dark:border-red-800">
             <div className="text-sm text-red-800 dark:text-red-300">
               <div className="font-semibold mb-1">
-                {errorMessage.includes("cancelled") ? "🚫 Transaction Cancelled" : "❌ Transaction Failed"}
+                {errorMessage.includes("cancelled") ? "Transaction Cancelled" : "Transaction Failed"}
               </div>
               <div className="text-xs text-red-600 dark:text-red-400">
                 {errorMessage || "Please try again or check your wallet connection."}
@@ -258,7 +258,7 @@ export const NFTMinter = ({
         {transactionStatus === "success" && mintTxHash && (
           <div className="mt-4 p-3 bg-green-50 dark:bg-green-900/20 rounded-lg border border-green-200 dark:border-green-800">
             <div className="text-sm text-green-800 dark:text-green-300">
-              <div className="font-semibold mb-1">✅ NFT Minted Successfully!</div>
+              <div className="font-semibold mb-1">NFT Minted Successfully!</div>
               <div className="space-y-1">
                 <div>
                   Transaction:

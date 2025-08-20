@@ -33,7 +33,7 @@ export const WalrusLink = ({ blobId, className = "", children }: WalrusLinkProps
   if (!isValid) {
     return (
       <div className="space-y-2">
-        <span className={`${className} text-red-600 dark:text-red-400`}>⚠️ {children} (Link Not Working)</span>
+        <span className={`${className} text-red-600 dark:text-red-400`}>Warning: {children} (Link Not Working)</span>
         <div className="text-xs text-red-500 bg-red-50 dark:bg-red-900/20 p-2 rounded border border-red-200 dark:border-red-800">
           <div className="font-semibold mb-1">Walrus URL Not Found (404 Error)</div>
           <div className="space-y-1">
@@ -55,7 +55,7 @@ export const WalrusLink = ({ blobId, className = "", children }: WalrusLinkProps
       className={`${className} text-purple-600 dark:text-purple-400 hover:underline inline-block max-w-full`}
       title={walrusUrl}
     >
-      ✅ {children}
+              {children}
     </a>
   );
 };

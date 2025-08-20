@@ -132,7 +132,7 @@ export const Messenger = ({ isOpen, onClose }: MessengerProps) => {
 
     const userMessage: Message = {
       id: Date.now().toString(),
-      content: inputMessage || (selectedFile ? "🎨 Analyzing your image and storing on Walrus..." : ""),
+              content: inputMessage || (selectedFile ? "Analyzing your image and storing on Walrus..." : ""),
       sender: "user",
       timestamp: new Date(),
       imageFile: selectedFile || undefined,

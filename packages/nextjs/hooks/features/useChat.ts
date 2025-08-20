@@ -17,7 +17,7 @@ export const useChat = (): UseChatReturn => {
     {
       role: "model",
       content:
-        "🎨 Buongiorno! I'm Donatello, your Renaissance-inspired AI creative assistant! Named after the great Florentine sculptor, I carry the spirit of artistic mastery into the digital age. I'm passionate about transforming your creative visions into stunning digital masterpieces and helping you mint them as NFTs on the blockchain. Upload your artwork or share your creative ideas - let's create something magnificent together! ✨",
+        "Buongiorno! I'm Donatello, your Renaissance-inspired AI creative assistant! Named after the great Florentine sculptor, I carry the spirit of artistic mastery into the digital age. I'm passionate about transforming your creative visions into stunning digital masterpieces and helping you mint them as NFTs on the blockchain. Upload your artwork or share your creative ideas - let's create something magnificent together!",
       timestamp: new Date(),
     },
   ]);
@@ -28,10 +28,10 @@ export const useChat = (): UseChatReturn => {
     try {
       await checkFlaskHealth();
       setIsHealthy(true);
-      console.log("✅ Flask backend is healthy");
+              console.log("Flask backend is healthy");
     } catch (error) {
       setIsHealthy(false);
-      console.warn("⚠️ Flask backend health check failed:", error);
+              console.warn("Flask backend health check failed:", error);
     }
   }, []);
 
@@ -43,7 +43,7 @@ export const useChat = (): UseChatReturn => {
     // Add user message to chat
     const userMessage: ChatMessage = {
       role: "user",
-      content: message || (imageFile ? `🎨 Uploading and analyzing: ${imageFile.name}` : ""),
+              content: message || (imageFile ? `Uploading and analyzing: ${imageFile.name}` : ""),
       timestamp: new Date(),
     };
     setMessages(prev => [...prev, userMessage]);
@@ -119,25 +119,25 @@ User message: ${message}`;
         setMessages(prev => [...prev, aiMessage]);
 
         // Log Gemini response for debugging
-        console.log("✅ Gemini AI Response:", geminiResponse.response);
+        console.log("Gemini AI Response:", geminiResponse.response);
       } else {
         throw new Error(geminiResponse.error || "Failed to get AI response");
       }
     } catch (error) {
-      console.error("❌ Chat error:", error);
+              console.error("Chat error:", error);
 
       // Create appropriate error message based on the type of failure
       let errorContent = "Sorry, I encountered an error. Please try again.";
 
       if (error instanceof Error) {
         if (error.message.includes("file type")) {
-          errorContent = "❌ " + error.message + "\n\nPlease upload a PNG, JPG, JPEG, GIF, BMP, or WEBP file.";
+          errorContent = "Error: " + error.message + "\n\nPlease upload a PNG, JPG, JPEG, GIF, BMP, or WEBP file.";
         } else if (error.message.includes("file size")) {
-          errorContent = "❌ " + error.message + "\n\nPlease choose a smaller image (max 16MB).";
+          errorContent = "Error: " + error.message + "\n\nPlease choose a smaller image (max 16MB).";
         } else if (error.message.includes("Chat failed") || error.message.includes("Upload failed")) {
-          errorContent = `❌ ${error.message}\n\n🔍 Make sure your Flask backend is running on http://127.0.0.1:5000`;
+                      errorContent = `Error: ${error.message}\n\nMake sure your Flask backend is running on http://127.0.0.1:5000`;
         } else {
-          errorContent = `❌ ${error.message}`;
+                      errorContent = `Error: ${error.message}`;
         }
       }
 

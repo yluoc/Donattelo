@@ -76,7 +76,7 @@ User message: ${message || "What do you think of this image?"}`;
       } catch (error) {
         console.error("Gemini API error:", error);
         // Fallback response with enhanced Walrus information
-        aiResponse = `🎨 Perfect! Your image has been successfully analyzed and stored on Walrus decentralized storage!
+        aiResponse = `Perfect! Your image has been successfully analyzed and stored on Walrus decentralized storage!
 
 � **Walrus Storage Success:**
 📍 **Your Image URL**: ${walrusUrl}
@@ -93,7 +93,7 @@ ${metadata.dominant_colors ? `• Dominant colors: ${metadata.dominant_colors.sl
     : "• Analysis complete!"
 }
 
-🚀 Your image is now permanently stored on Walrus and ready for NFT minting! The AI analysis is temporarily unavailable, but your artwork is safe and accessible. Would you like to proceed with creating an NFT?`;
+        Your image is now permanently stored on Walrus and ready for NFT minting! The AI analysis is temporarily unavailable, but your artwork is safe and accessible. Would you like to proceed with creating an NFT?`;
       }
     } else if (message && message.trim()) {
       // Handle text-only messages through Gemini
@@ -112,7 +112,7 @@ ${metadata.dominant_colors ? `• Dominant colors: ${metadata.dominant_colors.sl
 
         if (lowerMessage.includes("mint") || lowerMessage.includes("nft")) {
           aiResponse =
-            "🚀 I can help you mint your artwork as an NFT! Please upload an image first, and I'll analyze it, store it permanently on Walrus, and guide you through the minting process on your preferred blockchain.";
+            "I can help you mint your artwork as an NFT! Please upload an image first, and I'll analyze it, store it permanently on Walrus, and guide you through the minting process on your preferred blockchain.";
         } else if (lowerMessage.includes("upload") || lowerMessage.includes("image")) {
           aiResponse =
             "📸 Please use the upload button to share your image (PNG, JPG, JPEG, GIF, BMP, or WEBP - up to 16MB). I'll analyze it, store it securely on Walrus decentralized storage, and help you create amazing NFTs!";
@@ -121,7 +121,7 @@ ${metadata.dominant_colors ? `• Dominant colors: ${metadata.dominant_colors.sl
             "🐋 Walrus provides decentralized, permanent storage for your digital assets - perfect for NFT metadata and ensuring your art is always accessible! When you upload an image, it gets stored permanently on the Walrus network with a unique blob ID.";
         } else if (lowerMessage.includes("help") || lowerMessage.includes("what")) {
           aiResponse =
-            "🎨 I'm Donatello, your AI creative assistant! I can:\n\n• Analyze and store images on Walrus decentralized storage\n• Provide creative insights about your artwork\n• Help you mint NFTs\n• Create variations of your art\n• Answer questions about digital art and blockchain\n\nUpload an image to get started!";
+            "I'm Donatello, your AI creative assistant! I can:\n\n• Analyze and store images on Walrus decentralized storage\n• Provide creative insights about your artwork\n• Help you mint NFTs\n• Create variations of your art\n• Answer questions about digital art and blockchain\n\nUpload an image to get started!";
         } else {
           aiResponse =
             "I'm your AI creative assistant! Upload an image to get started with Walrus storage and NFT creation, or ask me anything about digital art and blockchain technology.";
@@ -135,9 +135,9 @@ ${metadata.dominant_colors ? `• Dominant colors: ${metadata.dominant_colors.sl
     // Check Flask backend health
     try {
       await checkFlaskHealth();
-      console.log("✅ Flask backend is healthy");
+              console.log("Flask backend is healthy");
     } catch (error) {
-      console.warn("⚠️ Flask backend health check failed:", error);
+              console.warn("Flask backend health check failed:", error);
     }
 
     return NextResponse.json({

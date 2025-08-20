@@ -63,7 +63,7 @@ async function getBalanceForEachNetwork(address) {
 async function checkAccountBalance() {
   try {
     // Step 1: List accounts and let user select one
-    console.log("📋 Listing available accounts...");
+            console.log("Listing available accounts...");
     const selectedKeystore = await listKeystores(
       "Select a keystore to display its balance (enter the number, e.g., 1): "
     );

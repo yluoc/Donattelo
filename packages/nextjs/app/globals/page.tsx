@@ -79,7 +79,7 @@ const Home: NextPage = () => {
             Named after the great Florentine sculptor, I bring centuries of artistic mastery into the digital age.
             Transform your creative visions into magnificent SVG masterpieces and mint them as eternal NFTs on the
             blockchain. Upload your artwork or share your ideas - let&apos;s create something truly extraordinary
-            together! 🎨✨
+            together!
           </p>
 
           {connectedAddress && (

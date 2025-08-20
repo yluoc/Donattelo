@@ -15,19 +15,19 @@ export const WalrusDebugger = () => {
     try {
       const exists = await verifyWalrusBlob(blobId);
       if (exists) {
-        setResult("✅ Blob exists on Walrus testnet");
+        setResult("Blob exists on Walrus testnet");
       } else {
-        setResult("❌ Blob does NOT exist on Walrus testnet (404 error)");
+        setResult("Blob does NOT exist on Walrus testnet (404 error)");
       }
     } catch (error) {
-      setResult(`❌ Error checking blob: ${error}`);
+              setResult(`Error checking blob: ${error}`);
     } finally {
       setChecking(false);
     }
   };
 
   const testDirectUpload = async () => {
-    setResult("🧪 Testing direct Walrus upload...");
+            setResult("Testing direct Walrus upload...");
 
     try {
       // Create a simple test blob
@@ -43,14 +43,14 @@ export const WalrusDebugger = () => {
       if (response.ok) {
         const data = await response.json();
         const newBlobId = data.newlyCreated?.blobObject?.blobId;
-        setResult(`✅ Direct upload successful! Blob ID: ${newBlobId}`);
+        setResult(`Direct upload successful! Blob ID: ${newBlobId}`);
         setBlobId(newBlobId);
       } else {
         const errorText = await response.text();
-        setResult(`❌ Direct upload failed: ${response.status} - ${errorText}`);
+        setResult(`Direct upload failed: ${response.status} - ${errorText}`);
       }
     } catch (error) {
-      setResult(`❌ Direct upload error: ${error}`);
+              setResult(`Direct upload error: ${error}`);
     }
   };
 
@@ -90,9 +90,9 @@ export const WalrusDebugger = () => {
         {result && (
           <div
             className={`p-3 rounded-md text-sm ${
-              result.startsWith("✅")
+              result.startsWith("Blob exists") || result.startsWith("Direct upload successful")
                 ? "bg-green-50 dark:bg-green-900/20 text-green-800 dark:text-green-300 border border-green-200 dark:border-green-800"
-                : result.startsWith("❌")
+                                  : result.startsWith("Error") || result.startsWith("Blob does NOT exist") || result.startsWith("Direct upload failed")
                   ? "bg-red-50 dark:bg-red-900/20 text-red-800 dark:text-red-300 border border-red-200 dark:border-red-800"
                   : "bg-blue-50 dark:bg-blue-900/20 text-blue-800 dark:text-blue-300 border border-blue-200 dark:border-blue-800"
             }`}

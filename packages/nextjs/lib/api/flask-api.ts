@@ -44,14 +44,14 @@ export const uploadImageToWalrus = async (imageFile: File): Promise<WalrusUpload
   try {
     const blobExists = await verifyWalrusBlob(data.image_blob_id);
     if (!blobExists) {
-      console.warn("⚠️ WARNING: Blob does not exist on Walrus testnet!");
+              console.warn("WARNING: Blob does not exist on Walrus testnet!");
       console.warn("This might be fake/placeholder data from your Flask backend.");
       console.warn("Check your Flask logs to see if Walrus upload actually succeeded.");
     } else {
-      console.log("✅ Blob verified on Walrus testnet");
+              console.log("Blob verified on Walrus testnet");
     }
   } catch (error) {
-    console.warn("⚠️ Could not verify blob existence:", error);
+            console.warn("Could not verify blob existence:", error);
   }
 
   return data;

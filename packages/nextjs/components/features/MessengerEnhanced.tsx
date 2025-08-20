@@ -213,7 +213,7 @@ export const MessengerEnhanced = ({ isOpen, onClose }: MessengerProps) => {
                           {message.imageContext.metadata.file_info.size.height}
                         </div>
                         <div>
-                          📁 <strong>Format:</strong> {message.imageContext.metadata.file_info.format}
+                          <strong>Format:</strong> {message.imageContext.metadata.file_info.format}
                         </div>
                       </div>
                     </div>
@@ -228,12 +228,12 @@ export const MessengerEnhanced = ({ isOpen, onClose }: MessengerProps) => {
                       metadataBlobId={message.imageContext.metadata_blob_id || ""}
                       walrusUploadResult={message.imageContext}
                       onMintSuccess={(tokenId, txHash) => {
-                        console.log("🎉 NFT Minted Successfully!");
+                        console.log("NFT Minted Successfully!");
                         console.log("Token ID:", tokenId);
                         console.log("Transaction:", txHash);
                       }}
                       onMintError={error => {
-                        console.error("❌ NFT Minting Failed:", error);
+                        console.error("NFT Minting Failed:", error);
                       }}
                     />
                   </div>
@@ -341,7 +341,7 @@ export const MessengerEnhanced = ({ isOpen, onClose }: MessengerProps) => {
 
           {!isHealthy && (
             <div className="mt-2 text-xs text-red-600 dark:text-red-400 flex items-center gap-1">
-              ⚠️ Flask backend not connected. Make sure it&apos;s running on http://127.0.0.1:5000
+              Warning: Flask backend not connected. Make sure it&apos;s running on http://127.0.0.1:5000
             </div>
           )}
         </div>
